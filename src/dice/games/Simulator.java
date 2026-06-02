@@ -16,11 +16,13 @@ public class Simulator {
 
         System.out.println("How many dice would you like to roll " + name +"?");
         int numberOfDice = scanner.nextInt();
+        System.out.println("About to roll "+ numberOfDice + " dice.");
 
-//number generation
-        Random rand = new Random();
-        int rolledNumber = rand.nextInt(6) + 1;
-        System.out.println(display(rolledNumber));
+        for(int i = 0; i < numberOfDice; i++) {
+            Random rand = new Random();
+            int rolledNumber = rand.nextInt(6) + 1;
+            System.out.println(display(rolledNumber));
+        }
     }
 
 // strings to display the die faces
