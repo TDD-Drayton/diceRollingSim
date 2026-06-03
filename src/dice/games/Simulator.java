@@ -8,21 +8,26 @@ import java.util.Scanner;
 
 
 public class Simulator {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter your name: ");
         String name = scanner.nextLine();
 
-        System.out.println("How many dice would you like to roll " + name +"?");
+        System.out.println("How many dice would you like to roll " + name + "?");
         int numberOfDice = scanner.nextInt();
-        System.out.println("About to roll "+ numberOfDice + " dice.");
+        if (numberOfDice <= 5) {
+            System.out.println("About to roll " + numberOfDice + " dice.");
 
-        for(int i = 0; i < numberOfDice; i++) {
-            Random rand = new Random();
-            int rolledNumber = rand.nextInt(6) + 1;
-            System.out.println(display(rolledNumber));
+            for (int i = 0; i < numberOfDice; i++) {
+                Random rand = new Random();
+                int rolledNumber = rand.nextInt(6) + 1;
+                System.out.println(display(rolledNumber));
+            }
+        } else {
+            System.out.println("Error, die number should be less than 5");
         }
+        scanner.close();
     }
 
 // strings to display the die faces
@@ -39,4 +44,5 @@ public class Simulator {
 
     }
 }
+
 
