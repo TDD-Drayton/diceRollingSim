@@ -43,6 +43,8 @@ public class Simulator {
         }
 
     }
+
+    // TODO: Add totals for die rolls
 }
 
 
